@@ -26,8 +26,9 @@ namespace InheritanceInGroup
             ((Developper)developper).Salary = 5000;
             ((Developper)developper).Bonus = 3000;
 
-            people.Add(developper); 
+            people.Add(developper);
             people.Add(manager);
+            
 
             foreach (var person in people)
             {

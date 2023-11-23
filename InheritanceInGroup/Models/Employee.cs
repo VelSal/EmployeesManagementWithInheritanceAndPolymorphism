@@ -10,6 +10,7 @@ namespace InheritanceInGroup.Models
     public class Employee:Person
     {
         public string  Department { get; set; }
+        
         public double Salary { get; set; }
 
         public Employee(int personnaleNumber, string name):base(personnaleNumber, name)

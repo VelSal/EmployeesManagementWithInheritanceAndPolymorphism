@@ -9,6 +9,7 @@ namespace InheritanceInGroup.Models
     public class Developper:Employee
     {
         public decimal Bonus { get; set; }
+        protected double Holidays = 20;
         public Developper(int personnalNumber, string name) : base(personnalNumber, name)
         {
             this.PersonnalNumber = personnalNumber;
@@ -19,6 +20,11 @@ namespace InheritanceInGroup.Models
         {
             base.PrintEmployee();
             Console.WriteLine($"Bonus: {this.Bonus}");
+            if (this.Bonus > 999)
+            {
+                Console.WriteLine($"Holidays: {Holidays+=10}");
+            }
+            
         }
     }
 }
