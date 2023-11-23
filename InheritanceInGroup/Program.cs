@@ -18,7 +18,6 @@ namespace InheritanceInGroup
             manager.Age = 30;
             ((Manager)manager).Department = "IT";       //Casting from Person to Manager
             ((Manager)manager).Salary = 10000;
-            ((Manager)manager).PrintEmployee();
 
             Person developper = new Developper(02, "Rik");
             developper.Address = "Gent";
@@ -26,10 +25,21 @@ namespace InheritanceInGroup
             ((Developper)developper).Department = "IT";
             ((Developper)developper).Salary = 5000;
             ((Developper)developper).Bonus = 3000;
-            ((Developper)developper).PrintEmployee();
 
             people.Add(developper); 
             people.Add(manager);
+
+            foreach (var person in people)
+            {
+                if (person is Manager m)
+                {
+                    m.PrintEmployee();
+                }
+                else if (person is Developper d )
+                {
+                    d.PrintEmployee();
+                }
+            }
 
             Console.ReadLine();
         }
