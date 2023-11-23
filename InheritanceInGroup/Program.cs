@@ -11,20 +11,25 @@ namespace InheritanceInGroup
     {
         static void Main(string[] args)
         {
-            Manager manager = new Manager(01, "John");
+            List<Person> people = new List<Person>();
+            
+            Person manager = new Manager(01, "John");
             manager.Address = "Brussel";
             manager.Age = 30;
-            manager.Department = "IT";
-            manager.Salary = 10000;
-            manager.PrintEmployee();
+            ((Manager)manager).Department = "IT";       //Casting from Person to Manager
+            ((Manager)manager).Salary = 10000;
+            ((Manager)manager).PrintEmployee();
 
-            Developper developper = new Developper(02, "Rik");
+            Person developper = new Developper(02, "Rik");
             developper.Address = "Gent";
             developper.Age = 25;
-            developper.Department = "IT";
-            developper.Salary = 5000;
-            developper.Bonus = 3000;
-            developper.PrintEmployee();
+            ((Developper)developper).Department = "IT";
+            ((Developper)developper).Salary = 5000;
+            ((Developper)developper).Bonus = 3000;
+            ((Developper)developper).PrintEmployee();
+
+            people.Add(developper); 
+            people.Add(manager);
 
             Console.ReadLine();
         }
